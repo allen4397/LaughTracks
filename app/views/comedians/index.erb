@@ -4,8 +4,8 @@
   <div id="comedian-<%= comedian.id %>">
     <h2><%= comedian.name %></h2>
     <ul>
-      <li><%= comedian.age %></li>
-      <li><%= comedian.city %></li>
+      <li>Age: <%= comedian.age %></li>
+      <li>Hometown: <%= comedian.city %></li>
     </ul>
     <h3>Specials</h3>
     <% comedian.specials.each do |special| %>
