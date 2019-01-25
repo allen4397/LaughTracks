@@ -7,5 +7,13 @@
       <li><%= comedian.age %></li>
       <li><%= comedian.city %></li>
     </ul>
+    <h3>Specials</h3>
+    <% @specials.each do |special| %>
+      <% if special.comedian_id == comedian.id %>
+        <ul>
+          <li><%= special.name %></li>
+        </ul>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
