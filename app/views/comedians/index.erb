@@ -8,12 +8,10 @@
       <li><%= comedian.city %></li>
     </ul>
     <h3>Specials</h3>
-    <% @specials.each do |special| %>
-      <% if special.comedian_id == comedian.id %>
-        <ul>
-          <li><%= special.name %></li>
-        </ul>
-      <% end %>
+    <% comedian.specials.each do |special| %>
+      <ul>
+        <li><%= special.name %></li>
+      </ul>
     <% end %>
   </div>
 <% end %>
