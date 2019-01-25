@@ -9,8 +9,9 @@
     </ul>
     <h3>Specials</h3>
     <% comedian.specials.each do |special| %>
+      <h4><%= special.name %></h4>
       <ul>
-        <li><%= special.name %></li>
+        <li>Run-time: <%= special.run_time %></li>
       </ul>
     <% end %>
   </div>
