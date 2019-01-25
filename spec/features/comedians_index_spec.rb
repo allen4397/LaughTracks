@@ -65,6 +65,8 @@ RSpec.describe "when I visit comedians index page" do
 
       visit '/comedians'
 
+      save_and_open_page
+
       within '#comedian-1' do
         expect(page).to have_css("img[src*='#{url_1}']")
       end
