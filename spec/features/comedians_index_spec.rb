@@ -56,7 +56,7 @@ RSpec.describe "when I visit comedians index page" do
   end
 
   context 'Where I see a list of each comedians TV specials names' do
-    it 'shows each specials run-time length in minutes, and a thumbnail image' do
+    it 'shows each specials run-time length in minutes' do
       Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
       Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
       Special.create(name: "New In Town", comedian_id: 1, run_time: 80)
@@ -108,10 +108,8 @@ RSpec.describe "when I visit comedians index page" do
     it 'shows me the average run time of all the specials on the page' do
       Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
       Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
-      url_1 = "https://m.media-amazon.com/images/M/MV5BMjIzNzg5NTA2M15BMl5BanBnXkFtZTgwOTY4NjA2MDE@._V1_UY1200_CR135,0,630,1200_AL_.jpg"
-      url_2 = "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_UY268_CR1,0,182,268_AL_.jpg"
-      Special.create(name: "New In Town", comedian_id: 1, run_time: 90, image_url: url_1)
-      Special.create(name: "Jerry Before Seinfeld", comedian_id: 2, run_time: 60, image_url: url_2)
+      Special.create(name: "New In Town", comedian_id: 1, run_time: 90)
+      Special.create(name: "Jerry Before Seinfeld", comedian_id: 2, run_time: 60)
 
       visit '/comedians'
 
@@ -157,6 +155,22 @@ RSpec.describe "when I visit comedians index page" do
       visit '/comedians?age=34'
 
       expect(page).to_not have_content("Jerry Seinfeld")
+    end
+
+    it 'shows statistics that accurately reflect the filtered database' do
+      Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      Comedian.create(name: "Jerry Seinfeld", age: 62, city: "New York")
+      Comedian.create(name: "Hannibal", age: 34, city: "Chicago")
+      Special.create(name: "New In Town", run_time: 90, comedian_id: 1)
+      Special.create(name: "The Comeback Kid", run_time: 30, comedian_id: 1)
+      Special.create(name: "Jerry Before Seinfeld", run_time: 100, comedian_id: 2)
+
+      visit '/comedians?age=34'
+
+      expect(page).to have_content("Average Age: 34.0")
+      expect(page).to have_content("Average TV Special Run Time: 60.0")
+      expect(page).to have_content("Unique List of Cities: Chicago")
+      expect(page).to have_content("Total Number of TV Specials: 2")
     end
   end
 end
