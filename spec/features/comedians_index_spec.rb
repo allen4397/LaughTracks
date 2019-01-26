@@ -131,6 +131,21 @@ RSpec.describe "when I visit comedians index page" do
         expect(page).to have_content("Unique List of Cities: Chicago, New York")
       end
     end
+
+    it 'shows me a total number of tv specials' do
+      Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
+      Special.create(name: "New In Town", comedian_id: 1)
+      Special.create(name: "The Comeback Kid", comedian_id: 1)
+      Special.create(name: "Jerry Before Seinfeld", comedian_id: 2)
+
+      visit '/comedians'
+
+      within '#statistics' do
+        expect(page).to have_content("Total Number of TV Specials: #{Special.all.count}")
+      end
+
+    end
   end
 
   describe 'when I add an age query parameter to the url' do
