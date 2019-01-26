@@ -18,6 +18,24 @@ RSpec.describe "when I visit comedians index page" do
     end
   end
 
+  it 'shows me how many tv specials each comedian has' do
+    john = Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+    jerry = Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
+    Special.create(name: "New In Town", comedian_id: 1)
+    Special.create(name: "The Comeback Kid", comedian_id: 1)
+    Special.create(name: "Jerry Before Seinfeld", comedian_id: 2)
+
+    visit '/comedians'
+
+    within '#comedian-1' do
+      expect(page).to have_content("TV Specials: #{john.specials.count}")
+    end
+
+    within '#comedian-2' do
+      expect(page).to have_content("TV Specials: #{jerry.specials.count}")
+    end
+  end
+
   it "shows me each comedians tv specials" do
     Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
     Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")

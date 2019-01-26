@@ -15,7 +15,7 @@
       <li>Age: <%= comedian.age %></li>
       <li>Hometown: <%= comedian.city %></li>
     </ul>
-    <h3>Specials</h3>
+    <h3>TV Specials: <%= comedian.specials.count %></h3>
     <% comedian.specials.each do |special| %>
       <h4><%= special.name %></h4>
       <img class="thumbnail" src="<%= special.image_url %>" alt="<%= special.name %>_image">
