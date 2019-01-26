@@ -1,7 +1,13 @@
-<h1>All Comedians</h1>
+<h1>Comedians</h1>
+
+<article id="statistics">
+  <ul>
+    <li>Average Age: </li>
+  </ul>
+</article>
 
 <% @comedians.each do |comedian| %>
-  <div id="comedian-<%= comedian.id %>">
+  <section id="comedian-<%= comedian.id %>">
     <h2><%= comedian.name %></h2>
     <ul>
       <li>Age: <%= comedian.age %></li>
@@ -15,5 +21,5 @@
         <li>Run-time: <%= special.run_time %></li>
       </ul>
     <% end %>
-  </div>
+  </section>
 <% end %>

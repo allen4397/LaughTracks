@@ -17,7 +17,7 @@ dave = Comedian.create(name: "Dave Chappelle", age: 45, city: "Washington D.C.")
 mark = Comedian.create(name: "Mark Normand", age: 34, city: "New Orleans, LA")
 
 Special.destroy_all
-john_m.specials.create(name: "New In Town", run_time: 60)
+john_m.specials.create(name: "New In Town", run_time: 60, image_url: "https://m.media-amazon.com/images/M/MV5BMjIzNzg5NTA2M15BMl5BanBnXkFtZTgwOTY4NjA2MDE@._V1_UY1200_CR135,0,630,1200_AL_.jpg")
 john_m.specials.create(name: "The Comeback Kid", run_time: 62)
 john_m.specials.create(name: "Kid Gorgeous at Radio City", run_time: 65)
 jerry.specials.create(name: "Jerry Before Seinfeld", run_time: 62, image_url: "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_UY268_CR1,0,182,268_AL_.jpg")

@@ -65,8 +65,6 @@ RSpec.describe "when I visit comedians index page" do
 
       visit '/comedians'
 
-      save_and_open_page
-
       within '#comedian-1' do
         expect(page).to have_css("img[src*='#{url_1}']")
       end
@@ -75,5 +73,19 @@ RSpec.describe "when I visit comedians index page" do
         expect(page).to have_css("img[src*='#{url_2}']")
       end
     end
+  end
+
+  describe 'in the area of the page called statistics' do
+    it 'shows me the average age of all the comedians on the page' do
+      mulaney = Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      seinfeld = Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
+
+      visit '/comedians'
+
+      within '#statistics' do
+        expect(page).to have_content("Average age: 48")
+      end
+    end
+
   end
 end

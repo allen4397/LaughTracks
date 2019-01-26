@@ -1,4 +1,12 @@
 RSpec.describe Comedian do
+  describe 'Class Methods' do
+    it 'should return the average comedian age' do
+      mulaney = Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      seinfeld = Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
+      expect(Comedian.average_age).to eq(48)
+    end
+  end
+
   describe 'Validations' do
     describe 'Required Field(s)' do
       it 'should be invalid if missing a name' do
