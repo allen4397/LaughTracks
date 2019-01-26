@@ -5,5 +5,11 @@ RSpec.describe 'When user visits /comedians/new' do
 
       expect(page).to have_content("Name:")
     end
+
+    it 'shows a field for their age' do
+      visit '/comedians/new'
+
+      expect(page).to have_content("Age:")
+    end
   end
 end
