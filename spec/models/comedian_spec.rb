@@ -5,6 +5,13 @@ RSpec.describe Comedian do
       Comedian.create(name: "Jerry Seinfeld", age: 62, city: "Massapequa")
       expect(Comedian.average_age).to eq(48)
     end
+
+    it 'should return a unique list of cities' do
+      Comedian.create(name: "Hannibal", age: 36, city: "Chicago")
+      Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      Comedian.create(name: "Jerry Seinfeld", age: 62, city: "New York")
+      expect(Comedian.unique_cities).to eq("Chicago, New York")
+    end
   end
 
   describe 'Validations' do
