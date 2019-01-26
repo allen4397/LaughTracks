@@ -10,7 +10,7 @@
     <h3>Specials</h3>
     <% comedian.specials.each do |special| %>
       <h4><%= special.name %></h4>
-      <img src="<%= special.image_url %>" alt="<%= special.name %>_image">
+      <img class="thumbnail" src="<%= special.image_url %>" alt="<%= special.name %>_image">
       <ul>
         <li>Run-time: <%= special.run_time %></li>
       </ul>

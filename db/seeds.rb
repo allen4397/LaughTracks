@@ -20,7 +20,7 @@ Special.destroy_all
 john_m.specials.create(name: "New In Town", run_time: 60)
 john_m.specials.create(name: "The Comeback Kid", run_time: 62)
 john_m.specials.create(name: "Kid Gorgeous at Radio City", run_time: 65)
-jerry.specials.create(name: "Jerry Before Seinfeld", run_time: 62)
+jerry.specials.create(name: "Jerry Before Seinfeld", run_time: 62, image_url: "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_UY268_CR1,0,182,268_AL_.jpg")
 jerry.specials.create(name: "I'm Telling You For The Last Time", run_time: 75)
 jerry.specials.create(name: "Stand Up Confidential", run_time: 55)
 pete.specials.create(name: "Dirty Clean", run_time: 57)
