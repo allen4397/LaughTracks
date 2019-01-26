@@ -113,6 +113,17 @@ RSpec.describe "when I visit comedians index page" do
         expect(page).to have_content("Unique List of Cities: Chicago, New York")
       end
     end
+  end
 
+  describe 'when I add an age query parameter to the url' do
+    it 'shows only the comedians that fit that parameter' do
+      Comedian.create(name: "Hannibal", age: 34, city: "Chicago")
+      Comedian.create(name: "John Mulaney", age: 34, city: "Chicago")
+      Comedian.create(name: "Jerry Seinfeld", age: 62, city: "New York")
+
+      visit '/comedians?age=34'
+
+      expect(page).to_not have_content("Jerry Seinfeld")
+    end
   end
 end
