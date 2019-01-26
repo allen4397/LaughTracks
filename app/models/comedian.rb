@@ -6,4 +6,9 @@ class Comedian < ActiveRecord::Base
   def self.average_age
     Comedian.average(:age)
   end
+
+  def self.unique_cities
+    cities = Comedian.select(:city).distinct.map {|comedian| comedian.city }
+    cities.join", "
+  end
 end
