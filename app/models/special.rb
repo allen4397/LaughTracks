@@ -3,6 +3,6 @@ class Special < ActiveRecord::Base
   belongs_to :comedian
 
   def self.average_run_time
-    Special.average(:run_time)
+    Special.average(:run_time).round(2)
   end
 end
