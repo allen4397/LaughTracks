@@ -18,14 +18,14 @@
         <li>Hometown: <%= comedian.city %></li>
         <li>TV Specials: <%= comedian.specials.count %></li>
       </ul>
-    <aside class="specials">
+    <table class="specials">
       <% comedian.specials.each do |special| %>
-        <ul>
-          <li><%= special.name %></li>
+        <figure>
+          <figcaption><%= special.name %></figcaption>
           <img class="thumbnail" src="<%= special.image_url %>" alt="<%= special.name %>_image">
-          <li>Run-time: <%= special.run_time %></li>
-        </ul>
+          <figcaption>Run-time: <%= special.run_time %></figcaption>
+        </figure>
       <% end %>
-    </aside>
+    </table>
   </section>
 <% end %>
