@@ -4,26 +4,28 @@
   <h2>Statistics</h2>
   <ul>
     <li>Average Age: <%= @average_age %></li>
-    <li>Average TV Special Run Time: <%= @average_run_time %></li>
-    <li>Unique List of Cities: <%= @unique_cities %></li>
+    <li>Average TV Special Run Time: <%= @average_run_time %> minutes</li>
     <li>Total Number of TV Specials: <%= @specials.count %></li>
+    <li>Unique List of Cities: <%= @unique_cities %></li>
   </ul>
 </article>
 
 <% @comedians.each do |comedian| %>
   <section id="comedian-<%= comedian.id %>">
     <h2><%= comedian.name %></h2>
-    <ul>
-      <li>Age: <%= comedian.age %></li>
-      <li>Hometown: <%= comedian.city %></li>
-    </ul>
-    <h3>TV Specials: <%= comedian.specials.count %></h3>
-    <% comedian.specials.each do |special| %>
-      <h4><%= special.name %></h4>
-      <img class="thumbnail" src="<%= special.image_url %>" alt="<%= special.name %>_image">
-      <ul>
-        <li>Run-time: <%= special.run_time %></li>
+      <ul class="info">
+        <li>Age: <%= comedian.age %></li>
+        <li>Hometown: <%= comedian.city %></li>
+        <li>TV Specials: <%= comedian.specials.count %></li>
       </ul>
-    <% end %>
+    <aside class="specials">
+      <% comedian.specials.each do |special| %>
+        <ul>
+          <li><%= special.name %></li>
+          <img class="thumbnail" src="<%= special.image_url %>" alt="<%= special.name %>_image">
+          <li>Run-time: <%= special.run_time %></li>
+        </ul>
+      <% end %>
+    </aside>
   </section>
 <% end %>

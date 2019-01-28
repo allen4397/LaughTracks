@@ -39,5 +39,4 @@ hasan.specials.create(name: "Homecoming King", run_time: 72, image_url: "https:/
 neal.specials.create(name: "3 Mics", run_time: 65, image_url: "https://m.media-amazon.com/images/M/MV5BM2NhZDRiODEtZDRhMS00Yzk4LWEzNDUtZDQ2ZWUwMjQ2NTM1L2ltYWdlXkEyXkFqcGdeQXVyNDA2NzI3NjQ@._V1_SY1000_CR0,0,707,1000_AL_.jpg")
 dave.specials.create(name: "Equanimity", run_time: 60, image_url: "https://m.media-amazon.com/images/M/MV5BODJkMTAxNmYtZDg4OS00NzA2LTlmZTUtMDc2MjIwMzE4ZDMxXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg")
 dave.specials.create(name: "The Bird Revelation", run_time: 49, image_url: "https://m.media-amazon.com/images/M/MV5BNGYzOTE0YzEtMjc5NC00MTg2LTk2MDAtMzJlMjM1NTU1MjcwXkEyXkFqcGdeQXVyMTk2ODU0OTM@._V1_.jpg")
-dave.specials.create(name: "Killin' Them Softly", run_time: 57, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyOGMxN2MtYzUwYy00YzQxLTgwZTItZjAxZTIzYWM1YzEyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg")
 mark.specials.create(name: "SXSW Comedy with W. Kamau Bell", run_time: 158, image_url: "https://m.media-amazon.com/images/M/MV5BMTYzMjUyMTk1NV5BMl5BanBnXkFtZTgwMjQxMDQwNjE@._V1_SY1000_CR0,0,694,1000_AL_.jpg")
